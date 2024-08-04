@@ -1,16 +1,18 @@
-import React from 'react';
+  // src/components/Footer.js
 
-const Footer = () => {
-  return (
-    <footer className="app-footer">
-      <p>© 2024 Task Management System | Follow us on:</p>
-      <div className="social-links">
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-      </div>
-    </footer>
-  );
-};
+  import React from 'react';
 
-export default Footer;
+  const Footer = () => {
+    return (
+      <footer className="app-footer">
+        <p>© 2024 Maintenance Task Tracker. All rights reserved.</p>
+        <div className="social-links">
+          <a href="https://twitter.com">Twitter</a>
+          <a href="https://facebook.com">Facebook</a>
+          <a href="https://instagram.com">Instagram</a>
+        </div>
+      </footer>
+    );
+  };
+
+  export default Footer;

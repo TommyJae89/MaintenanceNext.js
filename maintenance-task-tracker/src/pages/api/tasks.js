@@ -1,26 +1,23 @@
-// src/pages/api/tasks.js
+import { prisma } from '../../lib/prisma'; // Adjust path as needed
 
-import prisma from '@/lib/prisma';
-
-// GET and POST handler for tasks
 export default async function handler(req, res) {
-  if (req.method === 'GET') {
+  if (req.method === 'POST') {
+    const { description, priority, category, acceptanceDate, email, phone } = req.body;
     try {
-      const tasks = await prisma.task.findMany({
-        orderBy: { receiveDate: 'asc' },
+      const newTask = await prisma.task.create({
+        data: {
+          description,
+          priority,
+          category,
+          acceptanceDate,
+          email,
+          phone,
+        },
       });
-      res.status(200).json(tasks);
+      res.status(201).json(newTask);
     } catch (error) {
-      res.status(500).json({ error: 'Failed to fetch tasks' });
-    }
-  } else if (req.method === 'POST') {
-    try {
-      const task = await prisma.task.create({
-        data: req.body,
-      });
-      res.status(201).json(task);
-    } catch (error) {
-      res.status(500).json({ error: 'Failed to add task' });
+      res.status(500).json({ error: 'Error creating task' });
     }
   }
+  // Handle other methods if needed (GET, DELETE, etc.)
 }

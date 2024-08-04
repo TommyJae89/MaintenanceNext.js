@@ -1,11 +1,12 @@
-import React from 'react';
+// src/components/Header.js
 
+import React from 'react';
 
 const Header = ({ isDarkMode, toggleDarkMode }) => {
   return (
-    <header className={styles.header}>
-      <h1 className={styles.title}>Maintenance Task Tracker</h1>
-      <button className={styles.darkModeToggle} onClick={toggleDarkMode}>
+    <header className="app-header">
+      <h1>Maintenance Task Tracker</h1>
+      <button className="toggle-button" onClick={toggleDarkMode}>
         {isDarkMode ? 'Light Mode' : 'Dark Mode'}
       </button>
     </header>
