@@ -5,7 +5,7 @@ export default function TaskForm() {
   const [customerNameInput, setCustomerNameInput] = useState('');
   const [customerEmailInput, setCustomerEmailInput] = useState('');
   const [customerPhoneInput, setCustomerPhoneInput] = useState('');
-  const [receiveDateInput, setReceiveDateInput] = useState('');
+  const [receiveDateInput, setReceiveDateInput] = useState(''); 
   const [priorityInput, setPriorityInput] = useState('');
   const [productColorInput, setProductColorInput] = useState('');
   const [productBrandInput, setProductBrandInput] = useState('');
@@ -274,34 +274,31 @@ export default function TaskForm() {
             </div>
             <div className="actions">
               <button onClick={() => markCompleted(index)}>
-                {task.completed ? 'Unmark Completed' : 'Mark as Completed'}
+                {task.completed ? 'Unmark' : 'Complete'}
               </button>
-              <button onClick={() => deleteTask(index)}>Delete Task</button>
+              <button onClick={() => deleteTask(index)}>Delete</button>
             </div>
           </li>
         ))}
       </ul>
+      <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+        Toggle Dark Mode
+      </button>
+      {/* Footer Component */}
       <footer className="footer">
-        <div className="footer-content">
-          <p>&copy; 2024 Company Name. All rights reserved.</p>
-          <div className="social-media">
-            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.twitter.com" target="_blank" title="Twitter">
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" title="Facebook">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-          </div>
+        <div className="social-links">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/twitter-icon.png" alt="Twitter" />
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/facebook-icon.png" alt="Facebook" />
+          </a>
+        </div>
+        <div className="company-info">
+          <p>© 2024 Maintenance Solutions Inc. All Rights Reserved.</p>
+          <p>Contact us at support@maintenancesolutions.com</p>
         </div>
       </footer>
-      <div className="dark-mode-toggle-container">
-        <button id="darkModeToggle" onClick={toggleDarkMode}>
-          Toggle Dark Mode
-        </button>
-      </div>
     </div>
   );
 }

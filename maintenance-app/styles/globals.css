@@ -1,222 +1,212 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(135deg, #e0eafc, #cfdef3);
-  color: #333;
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 20px auto;
   padding: 20px;
-  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
+  text-align: center;
+  font-size: 2em;
   margin-bottom: 20px;
-  color: #4a4a4a;
 }
 
 .task-form {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 10px;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.task-form input,
-.task-form select,
-.task-form button {
-  margin: 5px;
+.task-form input[type="text"],
+.task-form input[type="email"],
+.task-form input[type="tel"],
+.task-form input[type="date"],
+.task-form select {
+  flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.task-form input:focus,
+.task-form select:focus {
+  border-color: #333;
 }
 
 .task-form button {
-  background-color: #5cb85c;
-  color: #fff;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .task-form button:hover {
-  background-color: #4a9e4a;
+  background-color: #218838;
 }
 
 .filters {
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 .filters input,
 .filters select {
-  padding: 8px;
+  flex: 1;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
 
-ul {
-  list-style-type: none;
+#taskList {
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .task-item {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 10px;
-  text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.task-item.overdue {
-  background-color: #ffd1d1;
-  border-color: #ff7070;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #f1f1f1;
+  border-radius: 6px;
+  transition: background-color 0.3s;
 }
 
 .task-item.completed {
-  background-color: #d1ffd1;
-  border-color: #70ff70;
-  text-decoration: line-through;
-  color: #666;
+  background: #d4edda;
 }
 
 .actions button {
   background-color: #007bff;
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-right: 5px;
 }
 
 .actions button:hover {
   background-color: #0056b3;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 14px;
-  margin-top: 30px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px; /* Space between elements */
-}
-
-.footer-content p {
-  margin: 0;
-}
-
-.social-media a {
-  color: #fff;
-  font-size: 18px;
-  transition: color 0.3s;
-  margin: 0 10px;
-  display: inline-block;
-}
-
-.social-media a:hover {
-  color: #1da1f2; /* Twitter Blue */
-}
-
-.dark-mode-toggle-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-#darkModeToggle {
+.dark-mode-toggle {
+  display: block;
+  margin: 20px auto;
   padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
   border: none;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fff;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-#darkModeToggle:hover {
-  background-color: #555;
+.dark-mode-toggle:hover {
+  background-color: #5a6268;
 }
 
 .dark-mode {
-  background: linear-gradient(135deg, #232526, #414345);
-  color: #f4f4f9;
+  background-color: #333;
+  color: #f9f9f9;
+}
+
+.dark-mode .container {
+  background-color: #444;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .dark-mode .task-item {
-  background-color: #444;
-  border-color: #666;
-}
-
-.dark-mode .task-item.overdue {
-  background-color: #ff4c4c;
-  border-color: #ff0000;
-}
-
-.dark-mode .task-item.completed {
-  background-color: #44aa44;
-  border-color: #2f8f2f;
-}
-
-.dark-mode .task-form input,
-.dark-mode .task-form select,
-.dark-mode .task-form button,
-.dark-mode .filters input,
-.dark-mode .filters select {
-  border-color: #555;
-  background-color: #333;
-  color: #f4f4f9;
-}
-
-.dark-mode .actions button {
   background-color: #555;
 }
 
-.dark-mode .actions button:hover {
-  background-color: #777;
+.dark-mode .task-item.completed {
+  background-color: #3c763d;
 }
 
-.dark-mode .footer {
-  background-color: #111;
+.dark-mode .task-form button,
+.dark-mode .actions button,
+.dark-mode .dark-mode-toggle {
+  background-color: #28a745;
+  color: #fff;
 }
 
-.dark-mode .social-media a {
-  color: #f4f4f9;
+.dark-mode .task-form button:hover,
+.dark-mode .actions button:hover,
+.dark-mode .dark-mode-toggle:hover {
+  background-color: #218838;
 }
 
-.dark-mode .social-media a:hover {
-  color: #1da1f2; /* Twitter Blue */
+.dark-mode .filters input,
+.dark-mode .filters select,
+.dark-mode .task-form input,
+.dark-mode .task-form select {
+  background-color: #555;
+  border-color: #777;
+  color: #f9f9f9;
 }
 
-.input-error {
-  border: 2px solid red;
+.dark-mode .filters input::placeholder,
+.dark-mode .task-form input::placeholder {
+  color: #aaa;
 }
 
-.input-error::placeholder {
-  color: red;
+.footer {
+  background-color: #333;
+  color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.footer .social-links {
+  margin-bottom: 10px;
+}
+
+.footer .social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.footer .social-links a:hover {
+  transform: scale(1.1);
+}
+
+.footer .social-links img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer .company-info {
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.footer .company-info p {
+  margin: 5px 0;
 }
